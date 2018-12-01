@@ -13,11 +13,7 @@ fun main(args: Array<String>){
 }
 
 fun alg01(input: List<String> ): Int {
-    var result = 0
-
-    input.forEach {value -> result += value.toInt() }
-
-    return result
+    return input.map { v -> v.toInt() }.sum()
 }
 
 fun alg02(input: List<String> ): Int {
@@ -28,7 +24,7 @@ fun alg02(input: List<String> ): Int {
     while(true) {
         idx = if (idx  >= input.size) 0 else idx
 
-        frequency += input.get(idx).toInt()
+        frequency += input.map { v -> v.toInt() }.get(idx)
 
         if (frequencies.contains(frequency)) return frequency
 
